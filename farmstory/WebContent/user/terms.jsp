@@ -33,6 +33,7 @@
 			<div>
 				<a href="/farmstory/user/login.jsp" class="btnCancel">취소</a>
 				<a href="/farmstory/user/register.jsp" class="btnNext">다음</a>
+			<!-- a태그의 링크는 get 방식 -->
 			</div>
 			
 		</div>

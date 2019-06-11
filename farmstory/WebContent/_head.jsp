@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,9 +16,15 @@
         <a href="/farmstory/index.do"><img src="/farmstory/img/logo.png" alt="로고"></a>
         <p>
           <a href="/farmstory/index.do">HOME |</a>
+          
+		<c:if test="${sessionScope.user == null }">     <!-- LoginService.java 에 session.setAttribute("user", vo); 참고  -->     
           <a href="/farmstory/user/terms.do">회원가입 |</a>
           <a href="/farmstory/user/login.do">로그인 |</a>
-          <a href="#">로그아웃 |</a>
+        </c:if>
+          
+       <c:if test="${sessionScope.user != null}">
+          <a href="/farmstory/user/logout.do">로그아웃 |</a>
+       </c:if>
           <a href="#">고객센터</a>
         </p>
 
