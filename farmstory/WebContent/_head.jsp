@@ -33,9 +33,9 @@
         <ul>
           <li><a href="/farmstory/introduction/hello.do">팜스토리소개</a></li>
           <li><a href="/farmstory/market.do"><img src="/farmstory/img/head_menu_badge.png" alt="badge"/>장보기</a></li>
-          <li><a href="#">농작물이야기</a></li>
-          <li><a href="#">이벤트</a></li>
-          <li><a href="#">커뮤니티</a></li>
+          <li><a href="/farmstory/board/list.do?grp=croptalk&cate=story">농작물이야기</a></li>
+          <li><a href="/farmstory/board/list.do?grp=event&cate=event">이벤트</a></li>
+          <li><a href="/farmstory/board/list.do?grp=community&cate=notice">커뮤니티</a></li>
         </ul>
 
       </header>

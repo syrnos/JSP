@@ -29,6 +29,9 @@
         </ul>
 
       </header>
+      
+      
+      
       <section id="sub" class="croptalk">
         <div><img src="../img/sub_top_tit3.png" alt="CROP TALK"></div>
         <section>
@@ -48,12 +51,20 @@
               </p>
             </nav>
             <!-- 컨텐츠 내용 시작 -->
+            
+            
+            
+            
             <h3>내용을 입력하세요.</h3>
 
             <!-- 컨텐츠 내용 끝 -->
           </article>
         </section>
       </section>
+      
+      
+      
+      
       <footer>
         <img src="../img/footer_logo.png" alt="로고"/>
         <p>

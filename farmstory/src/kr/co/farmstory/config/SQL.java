@@ -2,11 +2,11 @@ package kr.co.farmstory.config;
 
 public class SQL {
 	
-	//?šŒ?›ê´?? ¨ 
+	//?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ 
 	public static final String SELECT_TERMS = "SELECT * FROM `JSP_TERMS`;";
 	public static final String SELECT_USER = "SELECT * FROM `JSP_USER` WHERE uid=? AND pass=PASSWORD(?);";
 	
-	public static final String INSERT_USER = "INSERT INTO `JSP_USER` SET "			//final ?ƒ?ˆ˜ë¡? ê³ ì • 
+	public static final String INSERT_USER = "INSERT INTO `JSP_USER` SET "			//final ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ê³ ì • 
 							+ "uid=?,"
 							+ "pass=PASSWORD(?),"
 							+ "name=?,"
@@ -19,14 +19,15 @@ public class SQL {
 							+ "regip=?,"
 							+ "rdate=NOW()";
 	
-	public static final String SELECT_USER_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE uid=?;";		//? ?”„ë¦¬í˜?–´ ?Š¤?…Œ?´?Š¸ ë¨¼íŠ¸
-	public static final String SELECT_NICK_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE nick=?;";		//? ?”„ë¦¬í˜?–´ ?Š¤?…Œ?´?Š¸ ë¨¼íŠ¸
-	public static final String SELECT_EMAIL_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE email=?;";		//? ?”„ë¦¬í˜?–´ ?Š¤?…Œ?´?Š¸ ë¨¼íŠ¸
-	public static final String SELECT_HP_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE hp=?;";		//? ?”„ë¦¬í˜?–´ ?Š¤?…Œ?´?Š¸ ë¨¼íŠ¸
+	public static final String SELECT_USER_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE uid=?;";		//? ?ï¿½ï¿½ë¦¬í˜?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë¨¼íŠ¸
+	public static final String SELECT_NICK_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE nick=?;";		//? ?ï¿½ï¿½ë¦¬í˜?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë¨¼íŠ¸
+	public static final String SELECT_EMAIL_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE email=?;";		//? ?ï¿½ï¿½ë¦¬í˜?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë¨¼íŠ¸
+	public static final String SELECT_HP_COUNT = "SELECT COUNT(*) FROM `JSP_USER` WHERE hp=?;";		//? ?ï¿½ï¿½ë¦¬í˜?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë¨¼íŠ¸
 	
-	//ê²Œì‹œ?Œê´?? ¨ 
+	//ê²Œì‹œ?ï¿½ï¿½ï¿½??ï¿½ï¿½ 
 	
 	public static final String INSERT_BOARD = "INSERT INTO `JSP_BOARD` SET "
+			 				+ "cate=?,"
 			 				+ "title=?,"
 			 				+ "content=?,"
 			 				+ "file=?,"
@@ -35,15 +36,15 @@ public class SQL {
 			 				+ "rdate=NOW()";
 	
 	public static final String SELECT_MAX_SEQ = "SELECT MAX(seq) FROM `JSP_BOARD`";			
-	//ë°©ê¸ˆ? „?— insert?œ seq 		max : ê°??¥ ìµœê·¼ ë²ˆí˜¸ 
+	//ë°©ê¸ˆ?ï¿½ï¿½?ï¿½ï¿½ insert?ï¿½ï¿½ seq 		max : ï¿½??ï¿½ï¿½ ìµœê·¼ ë²ˆí˜¸ 
 	public static final String INSERT_FILE = "INSERT INTO `JSP_FILE`(`parent`,`oldname`,`newname`,`rdate`) VALUES (?,?,?,NOW())";
 	
-	//?‹¤?š´ë¡œë“œ ì¹´ìš´?Š¸ ?ˆ˜ 
+	//?ï¿½ï¿½?ï¿½ï¿½ë¡œë“œ ì¹´ìš´?ï¿½ï¿½ ?ï¿½ï¿½ 
 	public static final String UPDATE_DOWNLOAD_COUNT = "UPDATE `JSP_FILE` SET download=download+1 WHERE parent=?";
 	
 	public static final String SELECT_LIST = "SELECT a.*, b.nick FROM `JSP_BOARD` AS a "
 											+ "JOIN `JSP_USER` AS b ON a.uid = b.uid "
-											+ "WHERE parent=0 "							// ê²Œì‹œ?Œ ?Œ“ê¸??´ ê²Œì‹œ?Œ ëª©ë¡?— ?‚˜?˜¤ì§? ?•Šê²? ?•¨(?Œ“ê¸?)
+											+ "WHERE parent=0 AND cate=? "							// ê²Œì‹œ?ï¿½ï¿½ ?ï¿½ï¿½ï¿½??ï¿½ï¿½ ê²Œì‹œ?ï¿½ï¿½ ëª©ë¡?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½(?ï¿½ï¿½ï¿½?)
 											+ "ORDER BY seq DESC "
 											+ "LIMIT ?, 10";
 	
@@ -71,25 +72,25 @@ public class SQL {
 	public static final String SELECT_COMMENT_LIST = "SELECT a.*, b.nick FROM `JSP_BOARD` AS a "
 													+ "JOIN `JSP_USER` AS b ON a.uid = b.uid "
 													+ "WHERE parent=? ORDER BY seq ASC";  	
-													//ì¿¼ë¦¬ 		ì§ˆì˜?•˜?‹¤ 		?°?´?„°ë² ì´?Š¤?— 
+													//ì¿¼ë¦¬ 		ì§ˆì˜?ï¿½ï¿½?ï¿½ï¿½ 		?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ë² ì´?ï¿½ï¿½?ï¿½ï¿½ 
 	
 	
 	
-//public : ?™¸ë¶??—?„œ ë°”ë¡œì°¸ì¡°
-//static : sql?´?˜?Š¤ ë§´ë²„ ì°¸ì—¬?•˜? ¤ë©? ë°”ë¡œ ?´?˜?Š¤ë³??ˆ˜ë¡? ì°¸ì¡°?•˜ê¸? ?œ„?•´?„œ 
-//final : ?ƒ?ˆ˜ë¡? ê³ ì •?‹œ?‚´
+//public : ?ï¿½ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½ ë°”ë¡œì°¸ì¡°
+//static : sql?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë§´ë²„ ì°¸ì—¬?ï¿½ï¿½?ï¿½ï¿½ï¿½? ë°”ë¡œ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ï¿½? ì°¸ì¡°?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ 
+//final : ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ê³ ì •?ï¿½ï¿½?ï¿½ï¿½
 	
 }
 /*
 public static final String INSERT_BOARD = "INSERT INTO `JSP_BOARD` SET "
-//						+ "seq=?,"					??™?œ¼ë¡? ?ˆ«?ê°? ?“¤?–´ê°??„œ ? œ?™¸	
-//						+ "parent=?,"				ê²Œì‹œ?Œ ?Œ“ê¸??´?¼ ? œ?™¸ 
-//						+ "comment=?,"				?Œ“ê¸?ë²ˆí˜¸ 
+//						+ "seq=?,"					?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½	
+//						+ "parent=?,"				ê²Œì‹œ?ï¿½ï¿½ ?ï¿½ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ 
+//						+ "comment=?,"				?ï¿½ï¿½ï¿½?ë²ˆí˜¸ 
 //						+ "cate=?,"					ì¹´í…Œê³ ë¦¬ 
 		 				+ "title=?,"
 		 				+ "content=?,"
-//						+ "file=?,";				?ŒŒ?¼ì²¨ë? 
-//						+ "hit=?,";					ì¡°íšŒ?ˆ˜
+//						+ "file=?,";				?ï¿½ï¿½?ï¿½ï¿½ì²¨ï¿½? 
+//						+ "hit=?,";					ì¡°íšŒ?ï¿½ï¿½
 		 				+ "uid=?,"
 		 				+ "regip=?,"
 		 				+ "rdate=NOW()";

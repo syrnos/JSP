@@ -10,6 +10,6 @@ public class ViewService implements CommonService{
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) {
 		
 		
-		return "/index.jsp";
+		return "/board/view.jsp";
 	}
 }
