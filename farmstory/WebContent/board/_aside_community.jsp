@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<section id="sub" class="community">
 		<div><img src="../img/sub_top_tit5.png" alt="COMMUNITY"></div>
 		<section>
@@ -14,8 +15,15 @@
 		  </aside>
 		  <article>
 		    <nav>
-		      <img src="../img/sub_nav_tit_cate5_tit1.png" alt="공지사항"/>
+		      <img src="../img/sub_nav_tit_cate5_tit_${cate}.png" alt="공지사항"/>
 		      <p>
-		        HOME > 커뮤니티 > <span>공지사항</span>
+		        HOME > 커뮤니티 > 
+		        <c:if test="${cate=='notice'}"><span>공지사항</span> </c:if>
+	       		<c:if test="${cate=='menu'}"><span>오늘의식단</span> </c:if>
+	       		<c:if test="${cate=='chef'}"><span>나도요리사</span> </c:if>
+	       		<c:if test="${cate=='qna'}"><span>고객문의</span> </c:if>
+	       		<c:if test="${cate=='faq'}"><span>자주묻는질문</span> </c:if>
+		        
+		        
 		      </p>
 		    </nav>

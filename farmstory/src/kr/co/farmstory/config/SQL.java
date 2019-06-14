@@ -26,6 +26,9 @@ public class SQL {
 	
 	//게시?���??�� 
 	
+	public static final String SELECT_LATEST = "SELECT * FROM `JSP_BOARD` WHERE cate=? ORDER BY seq DESC LIMIT 5;";	//최신글 5개 
+
+	
 	public static final String INSERT_BOARD = "INSERT INTO `JSP_BOARD` SET "
 			 				+ "cate=?,"
 			 				+ "title=?,"

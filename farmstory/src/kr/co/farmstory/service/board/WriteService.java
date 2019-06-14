@@ -15,18 +15,28 @@ public class WriteService implements CommonService{
 		
 		if(req.getMethod().equals("GET")) {
 			
+			String grp = req.getParameter("grp");
+			String cate = req.getParameter("cate");
+			
+			req.setAttribute("grp", grp);
+			req.setAttribute("cate", cate);
+			
+			
 			return "/board/write.jsp";
 			
 		} else {
+			
 			String title = req.getParameter("subject");
 			String content = req.getParameter("content");
+			String grp = req.getParameter("grp");
+			String cate = req.getParameter("cate");
 			String regip = req.getRemoteAddr();
 			
 			HttpSession session = req.getSession();
 			UserVO user = (UserVO) session.getAttribute("user");
 			
 			BoardVO vo = new BoardVO();
-			vo.setCate("story");
+			vo.setCate(cate);
 			vo.setTitle(title);
 			vo.setContent(content);
 			vo.setFile(0);
@@ -44,7 +54,7 @@ public class WriteService implements CommonService{
 				e.printStackTrace();
 			}
 			
-			return "redirect:/farmstory/board/list.do";
+			return "redirect:/farmstory/board/list.do?grp="+grp+"&cate="+cate;
 		}
 	}
 }
